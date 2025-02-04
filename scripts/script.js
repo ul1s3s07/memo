@@ -1,3 +1,15 @@
+function adjustBodyHeight() {
+   if (document.body.scrollHeight <= window.innerHeight) {
+      document.body.style.minHeight = "100vh";
+   } else {
+      document.body.style.minHeight = "auto"; // Let it grow naturally
+   }
+}
+
+// Call it initially and on resize
+adjustBodyHeight();
+window.addEventListener('resize', adjustBodyHeight);
+
 const totalCards = 12;
 const availableCards = ['A', 'K', 'Q', 'J'];
 const resetButton = document.getElementById('reset-button');

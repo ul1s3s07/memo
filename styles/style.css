@@ -10,20 +10,34 @@ body {
    background: #212121;
 }
 
-header {
+main {
+   flex-grow: 1;
+   /* Allow main to expand to fill available space */
+
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
 }
 
 #wrapper {
    min-height: 50vh;
-   max-height: 70vh;
    display: flex;
    flex-direction: column;
    flex-wrap: wrap;
    align-items: center;
    justify-content: space-evenly;
+   margin: 36px 0;
+}
+
+@media (min-width: 950px) {
+   #wrapper {
+      margin: 0px 0;
+   }
+
+   body {
+      padding: 0 64px;
+   }
 }
 
 @media (min-width: 700px) {
@@ -37,7 +51,6 @@ header {
    }
 
    body {
-      height: 100vh;
 
       display: flex;
       flex-direction: column;
@@ -46,18 +59,15 @@ header {
 }
 
 #game {
-   height: 100vh;
-   max-height: 70%;
    display: flex;
+   gap: 12px;
    flex-wrap: wrap;
    align-items: center;
    justify-content: center;
-
 }
 
 #stats {
    color: white;
-   position: absolute;
    padding: 1rem;
    text-align: center;
    width: calc(100% - 2rem);
